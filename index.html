@@ -23,8 +23,13 @@
       --font-body:    'DM Sans', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
-    body { background: var(--warm-white); color: var(--text-dark); font-family: var(--font-body); overflow-x: hidden; }
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100%;
+    }
+    body { background: var(--warm-white); color: var(--text-dark); font-family: var(--font-body); overflow-x: hidden; height: 100%; }
 
     /* ─── HERO ─────────────────────────────────────────────────────── */
     #hero {
@@ -37,6 +42,7 @@
       align-items: center;
       overflow: hidden;
       background: var(--green-deep);
+      scroll-snap-align: start;
     }
 
     .hero-bg {
@@ -146,6 +152,8 @@
     #main {
       background: var(--warm-white);
       position: relative;
+      scroll-snap-align: start;
+      min-height: 100vh;
     }
 
     .section-inner {
@@ -560,6 +568,8 @@
       background: var(--green-deep);
       position: relative;
       overflow: hidden;
+      scroll-snap-align: start;
+      min-height: 100vh;
     }
 
     #contact::before {
